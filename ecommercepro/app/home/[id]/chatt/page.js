@@ -59,6 +59,7 @@ function AllChats() {
   // fetch online users
   useEffect(()=>{
     const fetchOnline = async ()=>{
+      console.log('backend api is in message',process.env.NEXT_PUBLIC_SOCKET_URL)
       const res = await fetch(`${process.env.NEXT_PUBLIC_SOCKET_URL}/online-users`);
       const list = await res.json();
 

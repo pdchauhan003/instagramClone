@@ -30,8 +30,9 @@ const cors = require("cors");  // for communication of diferent post req
 // app.use(cors({ origin: "*" }));   // * for all page 
 app.use(cors({
   origin: [
-    "http://localhost:3000",
-    "https://instagram-clone-3ntr.vercel.app/"
+    "http://localhost:3001",
+    "https://instatry-theta.vercel.app",
+    "https://instatry-theta.vercel.app/"
   ],
   credentials: true
 }));
@@ -50,8 +51,9 @@ app.use(express.json());   //
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:3000",
-      "https://instagram-clone-3ntr.vercel.app/"
+      "http://localhost:3001",
+      "https://instatry-theta.vercel.app",
+      "https://instatry-theta.vercel.app/"
     ],
     methods: ["GET", "POST"],
     credentials: true
@@ -60,9 +62,6 @@ const io = new Server(server, {
 
 const onlineUsers = {};  // all connected sockets
 
-app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
-});
  
 // this is used to fetch last 30 messages  not older only plast 30
 app.get("/messages/:user1/:user2", async (req, res) => {
